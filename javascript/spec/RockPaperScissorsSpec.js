@@ -183,7 +183,7 @@ describe("Rock-Paper-Scissors", function() {
           return game.winner();
         });
         expect(drawGameResults).toEqual([null, null, null, null, null]);
-        expect(game.message()).toBe('Draw');
+        expect(game.message()).toBe('draw');
       });
 
     });

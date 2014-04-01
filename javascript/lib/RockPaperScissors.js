@@ -37,7 +37,7 @@ Game.prototype.loser = function() {
 
 Game.prototype.message = function() {
   if(this._samePick()) {
-    return 'Draw';
+    return 'draw';
   }
   else {
     return this.winner().pick + ' ' + this.PAIRS[this.winner().pick][this.loser().pick] + ' ' + this.loser().pick;
@@ -62,6 +62,14 @@ function Player(name) {
   this.name = name;
 }
 
+Player.prototype.OPTIONS = [
+'rock', 'paper', 'scissors', 'lizard', 'spock'
+]
+
 Player.prototype.picks = function(pick) {
   this.pick = pick;
 }
+
+Player.prototype.randomPick = function() {
+  return this.OPTIONS[Math.floor(Math.random()*(5))];
+};

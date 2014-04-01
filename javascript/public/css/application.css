@@ -1,0 +1,17 @@
+.options img {
+  width: 10%;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.options img:hover {
+  opacity: 1;
+}
+
+body {
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}

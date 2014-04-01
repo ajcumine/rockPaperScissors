@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>RPSLS</title>
+    <link rel='stylesheet' type='text/css' href='../public/css/application.css'>
+  </head>
+  <body>
+    <h1>ROCK PAPER SCISSORS LIZARD SPOCK</h1>
+    <div class='options'>
+      <img src='../public/images/rock.png' data-pick='rock'>
+      <img src='../public/images/paper.png' data-pick='paper'>
+      <img src='../public/images/scissors.png' data-pick='scissors'>
+      <img src='../public/images/lizard.png' data-pick='lizard'>
+      <img src='../public/images/spock.png' data-pick='spock'>
+    </div>
+    <ul id='result'></ul>
+    <script src='../lib/RockPaperScissors.js'></script>
+    <script src='http://code.jquery.com/jquery-2.1.0.min.js'></script>
+    <script>
+      $(document).ready(function(){
+        var p1 = new Player('human');
+        var p2 = new Player('computer');
+        var game = new Game(p1, p2);
+        $('.options img').on ('click', function(){
+          p1.picks($(this).data('pick'));
+          p2.picks(p2.randomPick());
+          var latestResult = $('<li>' + game.message() + '</li>');
+          $('#result').append(latestResult);
+        });
+      });
+    </script>
+  </body>
+</html>
