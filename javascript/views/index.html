@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>RPSLS</title>
+    <link rel='stylesheet' type='text/css' href='../public/css/reset.css'>
     <link rel='stylesheet' type='text/css' href='../public/css/application.css'>
+    <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <h1>ROCK PAPER SCISSORS LIZARD SPOCK</h1>
@@ -13,7 +15,7 @@
       <img src='../public/images/lizard.png' data-pick='lizard'>
       <img src='../public/images/spock.png' data-pick='spock'>
     </div>
-    <ul id='result'></ul>
+    <ul id='results'></ul>
     <script src='../lib/RockPaperScissors.js'></script>
     <script src='http://code.jquery.com/jquery-2.1.0.min.js'></script>
     <script>
@@ -25,7 +27,10 @@
           p1.picks($(this).data('pick'));
           p2.picks(p2.randomPick());
           var latestResult = $('<li>' + game.message() + '</li>');
-          $('#result').append(latestResult);
+          latestResult.prependTo('#results').hide().slideDown();
+          $('#results li:nth-child(5)').fadeOut(function(){
+            $(this).remove();
+          });
         });
       });
     </script>

@@ -1,3 +1,17 @@
+* {
+  width: 100%;
+}
+
+body {
+  text-align: center;
+  font-family: 'Revalia', cursive;
+}
+
+.options {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .options img {
   width: 10%;
   cursor: pointer;
@@ -8,10 +22,13 @@
   opacity: 1;
 }
 
-body {
-  text-align: center;
-}
-
 li {
   list-style-type: none;
+  margin: 2px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
