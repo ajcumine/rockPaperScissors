@@ -1,3 +1,5 @@
 require 'sinatra'
 
-require_relative '../javascript/views/index'
+get '/' do
+  erb :index
+end
